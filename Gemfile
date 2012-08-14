@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'rspec-rails'
