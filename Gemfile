@@ -22,6 +22,9 @@ end
 
 gem 'jquery-rails'
 gem 'inherited_resources'
+gem 'bootstrap-sass'
+gem 'hamlbars'
+gem 'ember-rails'
 
 group :development, :test do
   gem 'rspec-rails'

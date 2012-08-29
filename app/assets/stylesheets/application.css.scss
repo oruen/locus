@@ -11,3 +11,36 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap";
+
+body {
+  background-color: #ebd8c2;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 1000;
+  height: 300pt;
+  background-color: #E9EAEE;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  margin-top: 12px;
+}
+
+.sidebar tr .icon-remove {
+  display: none;
+}
+
+.sidebar .person-controls {
+  text-align: center;
+}
+
+.sidebar tr:hover .icon-remove {
+  display: inline-block;
+}
+
+.bg {
+  position: absolute;
+}
