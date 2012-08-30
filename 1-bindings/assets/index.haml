@@ -1,4 +1,29 @@
 !!!html
 %html
+  %head
+    %link{"rel" => "stylesheet", "href" => "tomorrow-night-bright.css", "type" => "text/css"}
+    %link{"rel" => "stylesheet", "href" => "styles.css", "type" => "text/css"}
+    %script{:type => "text/javascript", :src => "jquery.js"}
+    %script{:type => "text/javascript", :src => "handlebars.js"}
+    %script{:type => "text/javascript", :src => "ember.js"}
+    %script{:type => "text/javascript", :src => "highlight.js"}
+    :javascript
+      hljs.initHighlightingOnLoad();
   %body
     %h1 Bindings
+    -#
+      Em.Binding.oneWay
+    %pre
+      %code
+        =preserve do
+          :plain
+            App = {};
+            App.husband = Em.Object.create({
+              firstName: "Ross",
+              lastName: "Geller"
+            });
+            App.wife = Em.Object.create({
+              firstName: "Raechel",
+              lastNameBinding: "App.husband.lastName"
+            });
+

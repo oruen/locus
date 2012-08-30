@@ -6,7 +6,6 @@ output "public"
 # Take all JS inputs and wrap each of them in code to
 # register them with the Minispade module loader.
 match "*.js" do
-  filter Rake::Pipeline::Web::Filters::MinispadeFilter
 end
 
 # Take all SCSS inputs and compile them with Sass
