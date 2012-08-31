@@ -17,6 +17,10 @@ body {
   background-color: #ebd8c2;
 }
 
+a {
+  cursor: pointer;
+}
+
 .sidebar {
   position: fixed;
   z-index: 1000;

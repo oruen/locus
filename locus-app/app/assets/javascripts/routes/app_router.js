@@ -8,6 +8,10 @@ Locus.Router = Ember.Router.extend({
     index: Ember.Route.extend({
       route: '/',
       editPerson: Ember.Route.transitionTo('edit'),
+      deletePerson: function(person, event) {
+        event.context.deleteRecord();
+        Locus.get('router.store').commit();
+      },
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('people', Locus.Person.find());
       }

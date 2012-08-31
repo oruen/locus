@@ -11,7 +11,7 @@
         <a {{action editPerson person}}>{{person.name}}</a>
       </td>
       <td class='person-controls'>
-        <i class='icon-remove'></i>
+        <a {{action deletePerson person}}><i class='icon-remove'></i></a>
       </td>
     </tr>
   {{/each}}
