@@ -30,6 +30,11 @@ Locus.Router = Ember.Router.extend({
         return router.get('peopleController.content').find(function(item) {
           return item.get('id') === parseInt(urlParams.id);
         });
+      },
+      serialize: function(router, context){
+        return {
+          id: context.get('id')
+        }
       }
     }),
     newPerson: Ember.Route.extend({
