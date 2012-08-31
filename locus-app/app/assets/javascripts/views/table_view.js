@@ -20,5 +20,10 @@ Locus.TableView = Ember.View.extend(JQ.Animate, {
       this.get('table').set('y', parseInt(value, 10) / this.get('bgHeight'));
       return value;
     }
-  }.property('table.y')
+  }.property('table.y'),
+  didInsertElement: function() {
+    this._super();
+    console.log(this.get('top'), this.get('left'));
+    this.set('top', this.get('top'));
+  }
 });

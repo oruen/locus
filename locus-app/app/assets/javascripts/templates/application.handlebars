@@ -19,5 +19,8 @@
 </div>
 <div class='tableset'>
   <img class='bg' src='/assets/bg_clean.png' style="width:1600px;height:1203px;">
+  {{#each desk in Locus.router.tablesController}}
+    {{view Locus.TableView tableBinding="desk"}}
+  {{/each}}
 </div>
 
