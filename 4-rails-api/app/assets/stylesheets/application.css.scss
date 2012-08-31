@@ -20,6 +20,11 @@ body {
 .sidebar {
   position: fixed;
   z-index: 1000;
+  margin-top: 10px;
+  width: 200pt;
+}
+
+.sidebar .span3 {
   height: 300pt;
   background-color: #E9EAEE;
   border: 1px solid white;
