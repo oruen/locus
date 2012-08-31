@@ -27,9 +27,7 @@ Locus.Router = Ember.Router.extend({
         router.get('applicationController').connectOutlet('person', context);
       },
       deserialize: function(router, urlParams) {
-        return router.get('peopleController.content').find(function(item) {
-          return item.get('id') === parseInt(urlParams.id);
-        });
+        return Locus.Person.find(parseInt(urlParams.id, 10));
       },
       serialize: function(router, context){
         return {
