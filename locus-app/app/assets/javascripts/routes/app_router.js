@@ -3,6 +3,8 @@ Locus.Router = Ember.Router.extend({
   enableLogging: true,
 
   root: Ember.Route.extend({
+    addPerson: Em.Route.transitionTo('newPerson'),
+    peopleList: Em.Route.transitionTo('index'),
     index: Ember.Route.extend({
       route: '/',
       editPerson: Ember.Route.transitionTo('edit'),
@@ -15,7 +17,6 @@ Locus.Router = Ember.Router.extend({
     edit: Ember.Route.extend({
       route: '/people/:id',
 
-      peopleList: Em.Route.transitionTo('index'),
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('person', context);
       },
@@ -23,6 +24,13 @@ Locus.Router = Ember.Router.extend({
         return router.get('peopleController.content').find(function(item) {
           return item.get('id') === parseInt(urlParams.id);
         });
+      }
+    }),
+    newPerson: Ember.Route.extend({
+      route: '/people/new',
+
+      connectOutlets: function(router, context) {
+        router.get('applicationController').connectOutlet('person', {});
       }
     })
   })
