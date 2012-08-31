@@ -7,7 +7,7 @@ Locus.Router = Ember.Router.extend({
       route: '/',
       editPerson: Ember.Route.transitionTo('edit'),
       connectOutlets: function(router, context) {
-        router.get('applicationController').connectOutlet('people');
+        router.get('applicationController').connectOutlet('people', Locus.Person.find());
       }
 
       // Layout your routes here...
