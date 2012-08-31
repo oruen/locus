@@ -8,6 +8,13 @@ Locus.Router = Ember.Router.extend({
       router.get('store.defaultTransaction').rollback();
       Em.Route.transitionTo('index')(router);
     },
+    addTable: function(router) {
+      router.get('store.defaultTransaction').rollback();
+      var table = Locus.Table.createRecord({x: 0.5, y: 0.5, angle: 0});
+      router.get('store.defaultTransaction').commit();
+      window.view = Locus.TableView.create({table: table}).append(".tableset");
+    },
+
     index: Ember.Route.extend({
       route: '/',
       editPerson: Ember.Route.transitionTo('edit'),

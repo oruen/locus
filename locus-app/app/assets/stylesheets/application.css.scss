@@ -21,6 +21,16 @@ a {
   cursor: pointer;
 }
 
+.desk {
+  position: absolute;
+  width: 111px;
+  height: 106px;
+}
+
+.tableset {
+  position: absolute;
+}
+
 .sidebar {
   position: fixed;
   z-index: 1000;
