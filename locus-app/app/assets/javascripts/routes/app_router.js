@@ -12,6 +12,13 @@ Locus.Router = Ember.Router.extend({
       }
 
       // Layout your routes here...
+    }),
+    edit: Ember.Route.extend({
+      route: '/people/:id',
+
+      connectOutlets: function(router, context) {
+        router.get('applicationController').connectOutlet('person');
+      }
     })
   })
 });
