@@ -15,6 +15,10 @@ Locus.Router = Ember.Router.extend({
     edit: Ember.Route.extend({
       route: '/people/:id',
 
+      updatePerson: function(router, event) {
+        router.get('store').commit();
+        Ember.Route.transitionTo('index')(router);
+      },
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('person', context);
       },
@@ -26,7 +30,7 @@ Locus.Router = Ember.Router.extend({
     }),
     newPerson: Ember.Route.extend({
       route: '/people/new',
-      createPerson: function(router, event) {
+      updatePerson: function(router, event) {
         Locus.Person.createRecord(router.get('personController.content'));
         router.get('store').commit();
         Ember.Route.transitionTo('index')(router);
