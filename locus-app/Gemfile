@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'active_model_serializers', :git => 'git://github.com/josevalim/active_model_serializers.git'
 gem 'inherited_resources'
 gem 'bootstrap-sass'
 gem 'hamlbars'
