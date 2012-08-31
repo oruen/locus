@@ -6,14 +6,14 @@
     %script{:type => "text/javascript", :src => "jquery.js"}
     %script{:type => "text/javascript", :src => "handlebars.js"}
     %script{:type => "text/javascript", :src => "ember.js"}
-    %script{:type => "text/javascript", :src => "templates.js"}
     %script{:type => "text/javascript", :src => "highlight.js"}
+    %script{:type => "text/x-handlebars", :"data-template-name" => "person"}
+      :plain
+        <h1>{{person.fullName}}</h1>
     :javascript
       hljs.initHighlightingOnLoad();
   %body
-    %h1 Computed Properties
-    -#
-      Em.Binding.oneWay
+    %h1 Autoupdate
     %pre
       %code
         =preserve do
@@ -23,13 +23,23 @@
               firstName: "Ross",
               lastName: "Geller",
               fullName: function() {
-                console.log("Hola");
                 return this.get("firstName") +
                   " " + this.get("lastName");
               }.property("firstName", "lastName")
             });
+    %pre
       %code
         =preserve do
           :plain
-            &lt;h2&gt;{{person.fullName}}&lt;/h2&gt;
+            &lt;script type="text/x-handlebars"
+              data-template-name="person"&gt;
+              &lt;h1&gt;{{person.fullName}}&lt;/h1&gt;
+            &lt;/script&gt;
+    %pre
+      %code
+        =preserve do
+          :plain
+            App.PersonView = Em.View.extend({
+              templateName: "person"
+            });
 
