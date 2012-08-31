@@ -1,6 +1,20 @@
 .container-fluid
   .row-fluid
     .span3.sidebar
+      -#%form
+        %legend Правка коллеги
+        %label Имя
+        %input{:type => "text"}
+        %label Email
+        %input{:type => "email"}
+        %label Роль
+        %select{:style => "display:block;"}
+          %option Разработчик
+          %option Менеджер
+          %option Админ
+        %label &nbsp;
+        %button.btn{:type => "submit"} Сохранить
+        %button.btn.btn-warning Назад
       %table.table.table-striped
         %thead
           %tr
