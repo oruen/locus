@@ -18,6 +18,11 @@ Locus.Router = Ember.Router.extend({
       peopleList: Em.Route.transitionTo('index'),
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('person', context);
+      },
+      deserialize: function(router, urlParams) {
+        return router.get('peopleController.content').find(function(item) {
+          return item.get('id') === parseInt(urlParams.id);
+        });
       }
     })
   })
