@@ -1,5 +1,23 @@
-<h1>Application</h1>
+<div class='container-fluid'>
+  <div class='row-fluid'>
+    <div class='sidebar'>
+      <div class='controls'>
+        <button class='btn'>
+          <i class='icon-plus'></i>
+          Коллега
+        </button>
+        <button class='btn'>
+          <i class='icon-plus'></i>
+          Стол
+        </button>
+      </div>
+      <div class='span3'>
+        {{outlet}}
+      </div>
+    </div>
+    <div class='span9'>
+      <img class='bg' src='/assets/bg.png'>
+    </div>
+  </div>
+</div>
 
-<p>Your content here.</p>
-
-{{outlet}}

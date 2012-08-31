@@ -1,14 +1,15 @@
 Locus.Router = Ember.Router.extend({
   location: 'hash',
+  enableLogging: true,
 
   root: Ember.Route.extend({
     index: Ember.Route.extend({
-      route: '/'
+      route: '/',
 
       // You'll likely want to connect a view here.
-      // connectOutlets: function(router) {
-      //   router.get('applicationController').connectOutlet(App.MainView);
-      // }
+      connectOutlets: function(router, context) {
+        //router.get('applicationController').connectOutlet(Locus.MainView);
+      }
 
       // Layout your routes here...
     })
