@@ -8,7 +8,7 @@ Locus.Router = Ember.Router.extend({
 
       // You'll likely want to connect a view here.
       connectOutlets: function(router, context) {
-        //router.get('applicationController').connectOutlet(Locus.MainView);
+        router.get('applicationController').connectOutlet('people');
       }
 
       // Layout your routes here...
