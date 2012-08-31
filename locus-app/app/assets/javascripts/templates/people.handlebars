@@ -5,38 +5,14 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  {{#each person in controller}}
     <tr>
       <td>
-        Nick Recobra
+        {{person.name}}
       </td>
       <td class='person-controls'>
         <i class='icon-remove'></i>
       </td>
     </tr>
-    <tr>
-      <td>
-        Stepashka
-      </td>
-      <td class='person-controls'>
-        <i class='icon-remove'></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Амиров Тимур
-      </td>
-      <td class='person-controls'>
-        <i class='icon-remove'></i>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Париев Сергей
-      </td>
-      <td class='person-controls'>
-        <i class='icon-remove'></i>
-      </td>
-    </tr>
-  </tbody>
+  {{/each}}
 </table>
