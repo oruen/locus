@@ -1,15 +1,11 @@
 <form>
   <legend>Правка коллеги</legend>
   <label>Имя</label>
-  <input type='text'>
+  {{view Em.TextField valueBinding="name"}}
   <label>Email</label>
-  <input type='email'>
+  {{view Em.TextField valueBinding="email"}}
   <label>Роль</label>
-  <select style='display:block;'>
-    <option>Разработчик</option>
-    <option>Менеджер</option>
-    <option>Админ</option>
-  </select>
+  {{view Em.Select valueBinding="role" contentBinding="Locus.router.rolesController" optionLabelPath="content.name" optionValuePath="content.id" }}
   <label>&nbsp;</label>
   <button class='btn' type='submit'>Сохранить</button>
   <button {{action peopleList}} class='btn btn-warning'>Назад</button>

@@ -1,3 +1,3 @@
-Locus.PersonController = Ember.Controller.extend({
+Locus.PersonController = Ember.ObjectController.extend({
 
 });

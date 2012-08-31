@@ -17,7 +17,7 @@ Locus.Router = Ember.Router.extend({
 
       peopleList: Em.Route.transitionTo('index'),
       connectOutlets: function(router, context) {
-        router.get('applicationController').connectOutlet('person');
+        router.get('applicationController').connectOutlet('person', context);
       }
     })
   })
