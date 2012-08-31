@@ -45,6 +45,7 @@ Locus.Router = Ember.Router.extend({
         Ember.Route.transitionTo('index')(router);
       },
       connectOutlets: function(router, context) {
+        router.get('store.defaultTransaction').rollback();
         router.get('applicationController').connectOutlet('person', Locus.Person.createRecord());
       }
     })
