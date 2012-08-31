@@ -5,8 +5,7 @@ Locus.Router = Ember.Router.extend({
   root: Ember.Route.extend({
     index: Ember.Route.extend({
       route: '/',
-
-      // You'll likely want to connect a view here.
+      editPerson: Ember.Route.transitionTo('edit'),
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('people');
       }
@@ -16,6 +15,7 @@ Locus.Router = Ember.Router.extend({
     edit: Ember.Route.extend({
       route: '/people/:id',
 
+      peopleList: Em.Route.transitionTo('index'),
       connectOutlets: function(router, context) {
         router.get('applicationController').connectOutlet('person');
       }

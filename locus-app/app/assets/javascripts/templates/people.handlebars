@@ -8,7 +8,7 @@
   {{#each person in controller}}
     <tr>
       <td>
-        {{person.name}}
+        <a {{action editPerson person}}>{{person.name}}</a>
       </td>
       <td class='person-controls'>
         <i class='icon-remove'></i>
