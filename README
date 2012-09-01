@@ -1,0 +1,12 @@
+VirtualBox: https://www.virtualbox.org/wiki/Downloads
+Vagrant: http://downloads.vagrantup.com/tags/v1.0.3
+Vagrant box: http://yadi.sk/d/8jx7K8BATAo6
+
+vagrant box add locus locus.box
+mkdir ~/locus
+cd locus
+vagrant init locus
+vagrant up
+vagrant ssh
+cd /vagrant
+git clone git://github.com/oruen/locus.git
