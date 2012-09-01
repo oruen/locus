@@ -1,6 +1,7 @@
 //= require jq-animate
 Locus.TableView = Ember.View.extend(JQ.Animate, {
   classNames: ['desk'],
+  attributeBindings: ['draggable'],
   bgWidth: 1600,
   bgHeight: 1203,
   templateName: 'table',
@@ -23,7 +24,17 @@ Locus.TableView = Ember.View.extend(JQ.Animate, {
   }.property('table.y'),
   didInsertElement: function() {
     this._super();
-    console.log(this.get('top'), this.get('left'));
     this.set('top', this.get('top'));
-  }
+  },
+  draggable: 'true',
+  dragStart: function(event) {
+    var dataTransfer = event.originalEvent.dataTransfer;
+    dataTransfer.setData('Text', this.get('elementId'));
+    dataTransfer.setDragImage(this.get('dragIconElement'), 24, 24);
+  },
+  dragEnd: function(event) {
+    this.set('left', event.originalEvent.pageX + 'px');
+    this.set('top', (event.originalEvent.pageY - 111) + 'px');
+    Locus.get('router').send('deskMoved');
+  },
 });
